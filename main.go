@@ -1,13 +1,17 @@
 package main
 
 import (
+	"fyneGui/client"
+	"fyneGui/handle"
 	"fyneGui/initapp"
-	"fyneGui/service"
+	"fyneGui/log"
 )
 
 func main() {
+	log.InitLog()
 	initapp.InitApp()
-	service.LoginScreen()
-	service.Run()
+	handle.LoginScreen()
+	handle.Run()
+	go client.ClientRun()
 	initapp.GetMyApp().Run()
 }

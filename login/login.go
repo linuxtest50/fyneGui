@@ -5,6 +5,7 @@ import (
 	"fyne.io/fyne"
 	"fyne.io/fyne/layout"
 	"fyne.io/fyne/widget"
+	"fyneGui/client_handler"
 	"fyneGui/initapp"
 	"fyneGui/ntf"
 	"fyneGui/obj"
@@ -19,7 +20,7 @@ func Login() {
 	nameEntry := widget.NewEntry()
 	nameEntry.SetPlaceHolder("input name")
 	nameEntry.OnChanged = func(content string) {
-		fmt.Println("name:", nameEntry.Text, "entered")
+		//fmt.Println("name:", nameEntry.Text, "entered")
 	}
 
 	passEntry := widget.NewPasswordEntry()
@@ -30,6 +31,8 @@ func Login() {
 
 	loginBtn := widget.NewButton("Login", func() {
 		fmt.Println("name:", nameEntry.Text, "password:", passEntry.Text, "login in")
+		//myWin.Close()
+		client_handler.Login(nameEntry.Text)
 	})
 
 	signBtn := widget.NewButton("Sign", func() {

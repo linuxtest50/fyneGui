@@ -1,4 +1,4 @@
-package service
+package handle
 
 import (
 	"fyneGui/login"
